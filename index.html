@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINEAR GRADIENT TOOL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<p id="lg">This is a linear gradient color tool. Choose which colors you want to use and an angle for gradient. And copy code.</p>
+    
+<div id="settings">
+<label>First Color</label>
+<input id="firstcolor" type="color" oninput="linearGradient()">
+
+<label>Second Color</label>
+<input id="secondcolor" type="color" oninput="linearGradient()">
+
+<label>Gradient Degree</label>
+<input id="deg" type="number" min="1" max="360" value="1" oninput="linearGradient()">
+
+<button id="copybtn" onclick="copyCode()">Copy Code</button>
+</div>
+
+<script>
+
+document.body.style.backgroundImage = "linear-gradient(45deg, black, purple)";
+
+function linearGradient() {
+
+let firstcolorValue = document.getElementById("firstcolor").value;
+let secondcolorValue = document.getElementById("secondcolor").value;
+let deg = document.getElementById("deg").value;
+
+let code = "linear-gradient(" + deg + "deg," + firstcolorValue + "," + secondcolorValue + ")";
+document.body.style.backgroundImage = code;
+
+}
+
+function copyCode() {
+    let firstcolorValue = document.getElementById("firstcolor").value;
+    let secondcolorValue = document.getElementById("secondcolor").value;
+    let deg = document.getElementById("deg").value;
+    let code = "linear-gradient(" + deg + "deg," + firstcolorValue + "," + secondcolorValue + ")";
+
+    const el = document.createElement('textarea');
+    el.value = code;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    alert("Code copied to clipboard!");
+}
+
+
+</script>
+</body>
+</html>

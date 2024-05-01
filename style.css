@@ -1,0 +1,55 @@
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    font-size: 20px;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+#settings {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    height: fit-content;
+    width: fit-content;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 0 20px black;
+}
+
+input#deg {
+    text-align: center;
+}
+
+button {
+    margin-top: 10px;
+    font-size: 16px;
+    letter-spacing: 4px;
+}
+
+p#lg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    font-size: 15px;
+    letter-spacing: 2px;
+    background-color: white;
+    color: black;
+    padding:10px;
+    text-align: center;
+}
